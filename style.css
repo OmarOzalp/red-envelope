@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+  height: 100vh;
+  background-color: pink;
+  gap: 0;
+}
+
+.env {
+  display: grid;
+  position: relative;
+  justify-self: center;
+  align-self: end;
+  width: 400px;
+  background-color: #d01b23;
+  height: 266px;
+  animation: float linear 2s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.top {
+  z-index: -100;
+  border-top-left-radius: 20px;
+  position: absolute;
+  background-color: #d01b23;
+  transform: rotate(45deg);
+  width: 282px;
+  height: 282px;
+  top: -142px;
+  left: 59px;
+}
+
+/* .top {
+  position: absolute;
+  border-top: 200px solid #d01b23;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid transparent;
+} */
+
+.flap {
+  transform: rotateX(180deg) translateY(399px);
+}
+
+.triangle-left {
+  z-index: 10;
+  bottom: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 260px solid transparent;
+  border-left: 400px solid #cc4844;
+}
+
+.triangle-right {
+  bottom: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 260px solid transparent;
+  border-right: 400px solid #cd3637;
+}
+
+.card {
+  display: grid;
+  border-radius: 4px;
+  width: 360px;
+  height: 240px;
+  background-color: rgb(255, 247, 233);
+  justify-self: center;
+  align-self: center;
+  transition: all ease 1s;
+}
+.text {
+  margin: 5px 10px;
+}
+
+.inner-card {
+  font-family: "Brush Script MT", "Brush Script Std", cursive;
+  justify-self: center;
+  align-self: center;
+  display: block;
+
+  width: 94%;
+  height: 90%;
+  border: 3px solid rgb(240, 197, 145);
+  border-style: dashed;
+}
+
+.env:hover .card {
+  transform: translateY(-200px);
+}
+
+.front {
+  animation: animate ease-in-out 1s forwards;
+}
+
+.back {
+  animation: return ease-in-out 1s;
+}
+
+@keyframes animate {
+  0% {
+    z-index: 0;
+    transform: scale(100%) translateY(-200px);
+  }
+  25% {
+    z-index: 0;
+    transform: translateY(-250px);
+  }
+
+  100% {
+    z-index: 200;
+    transform: scale(200%);
+  }
+}
+
+@keyframes return {
+  0% {
+    z-index: 200;
+    transform: scale(200%);
+  }
+
+  75% {
+    z-index: 0;
+    transform: translateY(-250px);
+  }
+  100% {
+    z-index: 0;
+    transform: scale(100%) translateY(-200px);
+  }
+}
+
+.shadow {
+  z-index: -100;
+  justify-self: center;
+  height: 50px;
+  width: 500px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 60px;
+  animation: shadow linear 2s infinite;
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(90%);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  50% {
+    transform: scale(100%);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
