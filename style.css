@@ -3,6 +3,7 @@
   padding: 0;
 }
 body {
+  font-family: sans-serif;
   display: grid;
   height: 100vh;
   background-color: pink;
@@ -171,4 +172,40 @@ body {
     transform: scale(100%);
     background-color: rgba(0, 0, 0, 0.2);
   }
+}
+
+.inpt {
+  font-weight: bold;
+  color: #cd3637;
+  font-size: 24px;
+  text-align: center;
+  border: 8px solid #cd3637;
+  margin: 0 80px;
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: right;
+  outline: none;
+  border-radius: 16px;
+  width: 400px;
+  height: 100px;
+}
+
+.inpt::placeholder {
+  color: rgb(255, 157, 173);
+}
+
+.inpt:nth-of-type(2) {
+  justify-self: left;
+  grid-column: 2;
+}
+
+.text-head {
+  justify-self: end;
+  align-self: flex-end;
+}
+
+.birth {
+  padding-left: 80px;
+  justify-self: start;
 }
